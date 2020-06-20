@@ -44,7 +44,7 @@ pipeline {
             }
             steps {
                 input{
-                   message "Should we continue?"
+                   message: "Should we continue?"
                 }
                 milestone(1)
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
