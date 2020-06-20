@@ -43,9 +43,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                input{
-                   message: "Should we continue?"
-                }
+                input: 'Should we continue?'
                 milestone(1)
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                     sshPublisher(
